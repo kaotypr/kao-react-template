@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 
-import * as acttype from 'constants/actionType';
+import * as acttype from 'constants/action';
 
 const defaultState = {
   loading: false,
@@ -19,7 +19,6 @@ const auth = handleActions({
     ...state,
     loading: true,
     authenticated: false,
-    payload: null,
   }),
   [acttype.SUCCESS]: (state, { payload }) => ({
     ...state,
@@ -31,7 +30,6 @@ const auth = handleActions({
     ...state,
     loading: false,
     authenticated: false,
-    payload: null,
     error: error || 'Not Authenticated',
   }),
   [acttype.SIGNOUT]: () => ({
