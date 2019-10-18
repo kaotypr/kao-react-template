@@ -1,4 +1,4 @@
-import { DEFAULT_LOCAL_STORAGE_INITIATED } from '../../constants';
+import { DEFAULT_INITIATED } from 'constants/localstorage';
 
 import LocalStorageEntry from './entry';
 
@@ -11,7 +11,7 @@ const STORAGE_KEYS = {
 
 class LocalStorage {
   constructor() {
-    this.initiated = new LocalStorageEntry(STORAGE_KEYS.initiated, DEFAULT_LOCAL_STORAGE_INITIATED);
+    this.initiated = new LocalStorageEntry(STORAGE_KEYS.initiated, DEFAULT_INITIATED);
     this.user = new LocalStorageEntry(STORAGE_KEYS.user);
     this.token = new LocalStorageEntry(STORAGE_KEYS.token);
     this.notification = new LocalStorageEntry(STORAGE_KEYS.notification);
