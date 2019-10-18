@@ -25,7 +25,6 @@ export const authenticate = data => dispatch => {
     .catch(err => {
       cError(err);
       dispatch(actions.failure());
-      dispatch(actions.signout());
     });
 };
 

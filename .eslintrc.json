@@ -52,8 +52,9 @@
             "as-needed"
         ],
         "react/jsx-props-no-spreading": [ "warn", {
-          "exceptions": [ "Route", "PrivateRoute" ]
+          "exceptions": [ "Route", "Component", "PublicProvider", "PrivateProvider" ]
         }],
+        "max-len": [ "warn", { "ignoreComments": true, "code": 150 }],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "react/jsx-one-expression-per-line": "off",

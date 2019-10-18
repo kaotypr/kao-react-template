@@ -4,6 +4,7 @@ import * as acttype from 'constants/actionType';
 
 const defaultState = {
   loading: false,
+  authenticated: false,
   payload: null,
   error: null,
 };
@@ -17,25 +18,26 @@ const auth = handleActions({
   [acttype.REQUEST]: state => ({
     ...state,
     loading: true,
+    authenticated: false,
     payload: null,
-    error: false,
   }),
   [acttype.SUCCESS]: (state, { payload }) => ({
     ...state,
     loading: false,
+    authenticated: true,
     payload,
-    error: null,
   }),
   [acttype.FAILURE]: (state, { error }) => ({
     ...state,
     loading: false,
+    authenticated: false,
     payload: null,
-    error: error || 'Something went wrong',
+    error: error || 'Not Authenticated',
   }),
   [acttype.SIGNOUT]: () => ({
     loading: false,
+    authenticated: false,
     payload: null,
-    error: null,
   }),
 }, defaultState, options);
 
