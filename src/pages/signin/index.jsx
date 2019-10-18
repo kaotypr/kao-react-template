@@ -1,18 +1,11 @@
-import React, { useEffect } from 'react';
-import PublicLayout from 'layouts/public';
+import React, { memo } from 'react';
+import { Link } from 'react-router-dom';
 
-const Signin = ({ auth, history }) => {
-  useEffect(() => {
-    if (auth.authenticated) {
-      history.push('/dashboard');
-    }
-  }, [auth.authenticated, history]);
+const Signin = () => (
+  <>
+    <h2>Signin Page</h2>
+    <Link to="signup">Signup</Link>
+  </>
+);
 
-  return (
-    <PublicLayout>
-      <h2>Signin Page</h2>
-    </PublicLayout>
-  );
-};
-
-export default Signin;
+export default memo(Signin);
