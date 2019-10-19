@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
+import theme from 'assets/theme';
 import Routes from 'routes';
 import stores from 'stores';
 
@@ -11,7 +13,9 @@ function App() {
   return (
     <Provider store={stores}>
       <BrowserRouter basename={APP_BASENAME}>
-        <Routes />
+        <MuiThemeProvider theme={theme}>
+          <Routes />
+        </MuiThemeProvider>
       </BrowserRouter>
     </Provider>
   );
