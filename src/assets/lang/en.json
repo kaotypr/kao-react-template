@@ -1,16 +1,39 @@
 {
   "meta": {
     "title": "Kao Project",
-    "description": "This application description"
+    "description": "This application description",
+    "public": {
+      "page": {
+        "404": {
+          "title": "404",
+          "description": "The page you are looking for was not found"
+        },
+        "505": {
+          "title": "500",
+          "description": "Oops! Something went wrong with the server"
+        },
+        "home": {
+          "title": "Home",
+          "description": "Here is your homepage"
+        }
+      },
+      "component": {
+        "footer": {
+          "default": "Public Footer"
+        }
+      }
+    }
   },
   "navigation": {
     "public": {
       "home": "Home",
       "signin": "Sign in",
-      "signup": "Sign up"
+      "signup": "Sign up",
+      "default": "Public Page Navigation"
     },
     "app": {
-      "dashboard": "Dashboard"
+      "dashboard": "Dashboard",
+      "default": "App Navigation"
     }
   },
   "common": {
@@ -30,7 +53,8 @@
       "previous": "Previous",
       "confirm": "Confirm",
       "sure": "I'm Sure",
-      "notsure": "I'm Not Sure"
+      "notsure": "I'm Not Sure",
+      "default": "Button"
     },
     "status": {
       "loading": "Loading",
@@ -48,7 +72,8 @@
       "logout": "Logged Out",
       "auth": "Authorize",
       "authed": "Authorized",
-      "unauth": "Unauthorized"
+      "unauth": "Unauthorized",
+      "default": "Status"
     }
   }
 }

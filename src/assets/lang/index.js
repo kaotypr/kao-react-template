@@ -10,8 +10,8 @@ const resources = {
 
 i18n.init({
   resources,
-  lng: 'id',
-  fallbackLng: 'id',
+  lng: 'en',
+  fallbackLng: 'en',
   interpolation: {
     escapeValue: false,
   },

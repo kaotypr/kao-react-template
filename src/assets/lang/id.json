@@ -1,16 +1,39 @@
 {
   "meta": {
     "title": "Kao Project",
-    "description": "Deskripsi aplikasi ini"
+    "description": "Deskripsi aplikasi ini",
+    "public": {
+      "page": {
+        "404": {
+          "title": "404",
+          "description": "Halaman yang anda cari tidak ditemukan"
+        },
+        "505": {
+          "title": "500",
+          "description": "Oops! sepertinya ada kesalahan pada server"
+        },
+        "home": {
+          "title": "Beranda",
+          "description": "Kamu di halaman beranda"
+        }
+      },
+      "component": {
+        "footer": {
+          "default": "Catatan Kaki"
+        }
+      }
+    }
   },
   "navigation": {
     "public": {
-      "home": "Rumah",
+      "home": "Beranda",
       "signin": "Masuk",
-      "signup": "Daftar"
+      "signup": "Daftar",
+      "default": "Navigasi Halaman Publik"
     },
     "app": {
-      "dashboard": "Dasbor"
+      "dashboard": "Dasbor",
+      "default": "Navigasi Aplikasi"
     }
   },
   "common": {
@@ -30,7 +53,8 @@
       "previous": "Kembali",
       "confirm": "Konfirmasi",
       "sure": "Yakin",
-      "notsure": "Tidak Yakin"
+      "notsure": "Tidak Yakin",
+      "default": "Tombol"
     },
     "status": {
       "loading": "Memuat",
@@ -48,7 +72,8 @@
       "logout": "Telah Keluar",
       "authorize": "Melakukan Autorisasi",
       "authorized": "Terautorisasi",
-      "unauthorized": "Tidak Terautorisasi"
+      "unauthorized": "Tidak Terautorisasi",
+      "status": "Status"
     }
   }
 }
