@@ -7,8 +7,10 @@ import ServerError from 'pages/500';
 const Signin = asyncComponent(() => import('pages/signin'));
 const Signup = asyncComponent(() => import('pages/signup'));
 
-const defaultState = {
-  layout: 'public',
+const location = {
+  state: {
+    layout: layoutType.PUBLIC,
+  },
 };
 
 const publicRoutes = [
@@ -17,7 +19,7 @@ const publicRoutes = [
     path: '/',
     key: 'public/homepage',
     component: Homepage,
-    state: defaultState,
+    location,
   },
   {
     exact: true,
@@ -25,7 +27,7 @@ const publicRoutes = [
     path: '/signin',
     key: 'public/signin',
     component: Signin,
-    layout: defaultState,
+    location,
   },
   {
     exact: true,
@@ -33,21 +35,28 @@ const publicRoutes = [
     path: '/signup',
     key: 'public/signup',
     component: Signup,
-    state: defaultState,
-  },
-  {
-    exact: true,
-    path: '/404',
-    key: '/public/404',
-    component: Notfound,
-    state: defaultState,
+    location,
   },
   {
     exact: true,
     path: '/500',
     key: '/public/500',
+    location: {
+      state: {
+        layout: layoutType.BLANK,
+      },
+    },
     component: ServerError,
-    state: defaultState,
+  },
+  {
+    path: '*',
+    location: {
+      state: {
+        layout: layoutType.BLANK,
+      },
+    },
+    key: '/public/404',
+    component: Notfound,
   },
 ];
 
