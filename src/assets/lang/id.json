@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "Kao Project",
+    "description": "Deskripsi aplikasi ini"
+  },
+  "navigation": {
+    "public": {
+      "home": "Rumah",
+      "signin": "Masuk",
+      "signup": "Daftar"
+    },
+    "app": {
+      "dashboard": "Dasbor"
+    }
+  },
+  "common": {
+    "button": {
+      "submit": "Kirim",
+      "reset": "Atur Ulang",
+      "cancel": "Batal",
+      "open": "Buka",
+      "show": "Tampil",
+      "close": "Tutup",
+      "edit": "Sunting",
+      "Update": "Perbarui",
+      "delete": "Hapus",
+      "hide": "Sembunyikan",
+      "detail": "Detil",
+      "next": "Selanjutnya",
+      "previous": "Kembali",
+      "confirm": "Konfirmasi",
+      "sure": "Yakin",
+      "notsure": "Tidak Yakin"
+    }
+  }
+}

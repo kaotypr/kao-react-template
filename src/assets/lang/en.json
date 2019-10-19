@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "Kao Project",
+    "description": "This application description"
+  },
+  "navigation": {
+    "public": {
+      "home": "Home",
+      "signin": "Sign in",
+      "signup": "Sign up"
+    },
+    "app": {
+      "dashboard": "Dashboard"
+    }
+  },
+  "common": {
+    "button": {
+      "submit": "Submit",
+      "reset": "Reset",
+      "cancel": "Cancel",
+      "open": "Open",
+      "show": "Show",
+      "close": "Close",
+      "edit": "Edit",
+      "Update": "Update",
+      "delete": "Delete",
+      "hide": "Hide",
+      "detail": "Detail",
+      "next": "Next",
+      "previous": "Previous",
+      "confirm": "Confirm",
+      "sure": "I'm Sure",
+      "notsure": "I'm Not Sure"
+    }
+  }
+}
