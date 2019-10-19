@@ -1,16 +1,16 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const DoubleBounce = () => (
-  <LiWrap>
+const DoubleBounce = ({ height, width }) => (
+  <LiWrap height={height} width={width}>
     <BoundOne />
     <BounceTwo />
   </LiWrap>
 );
 
 const LiWrap = styled.li`
-  height: 60px;
-  width: 60px;
+  height: ${props => props.height || '60px'};
+  width: ${props => props.width || '60px'};
   right: 0;
   left: 0;
   z-index: 10;
@@ -55,8 +55,7 @@ const BounceTwo = styled.div`
   -webkit-animation: ${SkBounce} 2.0s infinite ease-in-out;
   animation: ${SkBounce} 2.0s infinite ease-in-out;
   -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
+  animation-delay: -0.5s;
 `;
-
 
 export default DoubleBounce;
