@@ -1,6 +1,9 @@
+import asyncComponent from 'components/hoc/async';
+
 import Homepage from 'pages/home';
-import Signin from 'pages/signin';
-import Signup from 'pages/signup';
+
+const Signin = asyncComponent(() => import('pages/signin'));
+const Signup = asyncComponent(() => import('pages/signup'));
 
 const defaultState = {
   layout: 'public',

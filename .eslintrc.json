@@ -52,7 +52,7 @@
             "as-needed"
         ],
         "react/jsx-props-no-spreading": [ "warn", {
-          "exceptions": [ "Route", "Component", "PublicProvider", "PrivateProvider" ]
+          "exceptions": [ "Route", "Component", "PublicProvider", "PrivateProvider", "C" ]
         }],
         "max-len": [ "warn", { "ignoreComments": true, "code": 150 }],
         "react-hooks/rules-of-hooks": "error",
