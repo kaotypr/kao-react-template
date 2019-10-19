@@ -31,6 +31,24 @@
       "confirm": "Konfirmasi",
       "sure": "Yakin",
       "notsure": "Tidak Yakin"
+    },
+    "status": {
+      "loading": "Memuat",
+      "pending": "Menunggu",
+      "done": "Selesai",
+      "failed": "Gagal",
+      "canceled": "Dibatalkan",
+      "submitted": "Dikirimkan",
+      "updated": "Diperbarui",
+      "hidden": "Tersembunyi",
+      "showed": "Ditampilkan",
+      "confirmed": "Dikonfimasi",
+      "signedin": "Telah Masuk",
+      "registered": "Telah Terdaftar",
+      "logout": "Telah Keluar",
+      "authorize": "Melakukan Autorisasi",
+      "authorized": "Terautorisasi",
+      "unauthorized": "Tidak Terautorisasi"
     }
   }
 }

@@ -31,6 +31,24 @@
       "confirm": "Confirm",
       "sure": "I'm Sure",
       "notsure": "I'm Not Sure"
+    },
+    "status": {
+      "loading": "Loading",
+      "pending": "Pending",
+      "done": "Done",
+      "failed": "Failed",
+      "canceled": "Canceled",
+      "submitted": "Submitted",
+      "updated": "Updated",
+      "hidden": "Hidden",
+      "showed": "Showed",
+      "confirmed": "Confirmed",
+      "signedin": "Signed In",
+      "registered": "Registered",
+      "logout": "Logged Out",
+      "auth": "Authorize",
+      "authed": "Authorized",
+      "unauth": "Unauthorized"
     }
   }
 }
