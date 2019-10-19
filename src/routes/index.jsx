@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { get as _get } from 'lodash/object';
 
 import LayoutProvider from 'layouts';
-import * as LayoutType from 'constants/layout';
+import * as LayoutType from 'constant/layout';
 import { authenticate } from 'stores/modules/auth/action';
 
 import publicRoutes from './public';

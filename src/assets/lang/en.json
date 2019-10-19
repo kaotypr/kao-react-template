@@ -8,13 +8,21 @@
           "title": "404",
           "description": "The page you are looking for was not found"
         },
-        "505": {
+        "500": {
           "title": "500",
           "description": "Oops! Something went wrong with the server"
         },
         "home": {
           "title": "Home",
           "description": "Here is your homepage"
+        },
+        "signin": {
+          "title": "Signin",
+          "description": "You are in Signin page"
+        },
+        "signup": {
+          "title": "Signup",
+          "description": "You are in Signup page"
         }
       },
       "component": {

@@ -9,7 +9,7 @@ import theme from 'assets/theme';
 import Routes from 'routes';
 import stores from 'stores';
 
-import { APP_BASENAME } from './constants';
+import { APP_BASENAME } from './constant';
 
 function App() {
   return (

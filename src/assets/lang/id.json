@@ -15,6 +15,14 @@
         "home": {
           "title": "Beranda",
           "description": "Kamu di halaman beranda"
+        },
+        "signin": {
+          "title": "Masuk",
+          "description": "Kamu di halaman masuk"
+        },
+        "signup": {
+          "title": "Daftar",
+          "description": "Kamu di halaman daftar"
         }
       },
       "component": {

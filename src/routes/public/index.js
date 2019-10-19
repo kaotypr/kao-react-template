@@ -1,5 +1,5 @@
 import asyncComponent from 'components/hoc/async';
-
+import * as layoutType from 'constant/layout';
 import Homepage from 'pages/home';
 import Notfound from 'pages/404';
 import ServerError from 'pages/500';
