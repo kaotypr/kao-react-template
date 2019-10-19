@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Typography } from '@material-ui/core';
 
 const Home = () => (
   <Wrapper>
-    <h1>Home Page</h1>
-    <Link to="/signin">Signin</Link>
+    <Typography variant="h1">Home Page</Typography>
   </Wrapper>
 );
 
 const Wrapper = styled.div`
-  background: green;
 `;
 
 export default Home;
