@@ -42,13 +42,16 @@ const Routes = ({
 
   useEffect(() => {
     /**
-     * Handling when browesrHistory just created and no layout state in the location object
+     * Handling when browesrHistory just created and no layout.key in the location object
+     * the condition is fulfilled when user first time visit or enter the the app url
+     * for example: user enter '/app/map' in the address bar and the map page uses a different layout
+     * Switch will reset every children Route location property at the very beginning
      */
     if (history.action === BROWSER_HISTORY_CREATED_ACTION_NAME && isUndefinedNull(location.key)) {
       const routeObj = getRouteObject(location.pathname);
       const routeObjLayout = _get(routeObj, 'location.state.layout');
       if (routeObjLayout) {
-        setLayout(routeObj.location.state.layout);
+        setLayout(routeObjLayout);
       }
     } else if (_get(location, 'state.layout')) {
       setLayout(location.state.layout); // USE CUSTOM LAYOUT IN APP LAYOUT WHEN LOCATION.STATE.LAYOUT IS SET
