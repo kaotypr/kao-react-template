@@ -12,3 +12,4 @@ Build by create-react-app for for learning purpose & adapt better code style beh
   - [x] Styled Components
   - [x] Material UI
   - [x] Axios
+  - [x] i18next
