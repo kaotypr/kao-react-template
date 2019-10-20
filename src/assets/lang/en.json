@@ -1,16 +1,59 @@
 {
   "meta": {
     "title": "Kao Project",
-    "description": "This application description"
+    "description": "This application description",
+    "public": {
+      "page": {
+        "404": {
+          "title": "404",
+          "description": "The page you are looking for was not found"
+        },
+        "500": {
+          "title": "500",
+          "description": "Oops! Something went wrong with the server"
+        },
+        "home": {
+          "title": "Home",
+          "description": "Here is your homepage"
+        },
+        "signin": {
+          "title": "Signin",
+          "description": "You are in Signin page"
+        },
+        "signup": {
+          "title": "Signup",
+          "description": "You are in Signup page"
+        }
+      },
+      "component": {
+        "footer": {
+          "default": "Public Footer"
+        }
+      }
+    },
+    "app": {
+      "page:": {
+        "dashboard": {
+          "title": "Dasbor",
+          "description": "Kamu di halaman dasbor"
+        },
+        "profile": {
+          "title": "Profil",
+          "description": "Kamu di halaman profil mu"
+        }
+      }
+    }
   },
   "navigation": {
     "public": {
       "home": "Home",
       "signin": "Sign in",
-      "signup": "Sign up"
+      "signup": "Sign up",
+      "default": "Public Page Navigation"
     },
     "app": {
-      "dashboard": "Dashboard"
+      "dashboard": "Dashboard",
+      "default": "App Navigation"
     }
   },
   "common": {
@@ -30,7 +73,27 @@
       "previous": "Previous",
       "confirm": "Confirm",
       "sure": "I'm Sure",
-      "notsure": "I'm Not Sure"
+      "notsure": "I'm Not Sure",
+      "default": "Button"
+    },
+    "status": {
+      "loading": "Loading",
+      "pending": "Pending",
+      "done": "Done",
+      "failed": "Failed",
+      "canceled": "Canceled",
+      "submitted": "Submitted",
+      "updated": "Updated",
+      "hidden": "Hidden",
+      "showed": "Showed",
+      "confirmed": "Confirmed",
+      "signedin": "Signed In",
+      "registered": "Registered",
+      "logout": "Logged Out",
+      "auth": "Authorize",
+      "authed": "Authorized",
+      "unauth": "Unauthorized",
+      "default": "Status"
     }
   }
 }

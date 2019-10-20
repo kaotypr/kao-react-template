@@ -1,35 +1,28 @@
-import React, { memo, useState } from 'react';
+import React, { memo } from 'react';
 import styled from 'styled-components';
 
-const PublicLayout = ({ children }) => {
-  const [black, setBlack] = useState(true);
-  const handleChangeColor = () => {
-    setBlack(!black);
-  };
-  return (
-    <LayoutWrapper>
-      <HeadNav isblack={black}>POLOS</HeadNav>
-      {children}
-      <button type="button" onClick={handleChangeColor}>Change head color</button>
-    </LayoutWrapper>
-  );
-};
+import TopNavigation from 'components/public/nav/top';
+import PublicFooter from 'components/public/footer';
 
-const HeadNav = styled.div`
-  position: fixed;
-  top: 0;
-  min-width: 100vw;
-  height: 3.5rem;
-  max-height: 3.5rem;
-  color: ${props => (props.isblack ? 'white' : 'black')}};
-  background-color: ${props => (props.isblack ? 'black' : 'white')}};
+const PublicLayout = ({ children }) => (
+  <LayoutWrapper>
+    <TopNavigation />
+    <ContentWrapper>
+      {children}
+    </ContentWrapper>
+    <PublicFooter />
+  </LayoutWrapper>
+);
+
+const ContentWrapper = styled.div`
+  padding: 3rem 1rem 2rem 1rem;
+  min-height: calc(100vh - 7rem);
+  max-width: 100vw;
+  box-sizing: border-box;
 `;
 
 const LayoutWrapper = styled.div`
-  position: fixed;
-  min-height: 100vh;
-  min-width: 100vw;
-  background-color: red;
+  position: relative;
 `;
 
 export default memo(PublicLayout);

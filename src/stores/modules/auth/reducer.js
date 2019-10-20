@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 
-import * as acttype from 'constants/action';
+import * as acttype from 'constant/action';
 
 const defaultState = {
   loading: false,

@@ -1,4 +1,4 @@
-import { DEFAULT_INITIATED } from 'constants/localstorage';
+import { DEFAULT_INITIATED } from 'constant/localstorage';
 
 import LocalStorageEntry from './entry';
 

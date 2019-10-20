@@ -1,12 +1,16 @@
 import asyncComponent from 'components/hoc/async';
-
+import * as layoutType from 'constant/layout';
 import Homepage from 'pages/home';
+import Notfound from 'pages/404';
+import ServerError from 'pages/500';
 
 const Signin = asyncComponent(() => import('pages/signin'));
 const Signup = asyncComponent(() => import('pages/signup'));
 
-const defaultState = {
-  layout: 'public',
+const location = {
+  state: {
+    layout: layoutType.PUBLIC,
+  },
 };
 
 const publicRoutes = [
@@ -15,7 +19,7 @@ const publicRoutes = [
     path: '/',
     key: 'public/homepage',
     component: Homepage,
-    state: defaultState,
+    location,
   },
   {
     exact: true,
@@ -23,7 +27,7 @@ const publicRoutes = [
     path: '/signin',
     key: 'public/signin',
     component: Signin,
-    layout: defaultState,
+    location,
   },
   {
     exact: true,
@@ -31,7 +35,28 @@ const publicRoutes = [
     path: '/signup',
     key: 'public/signup',
     component: Signup,
-    state: defaultState,
+    location,
+  },
+  {
+    exact: true,
+    path: '/500',
+    key: '/public/500',
+    location: {
+      state: {
+        layout: layoutType.BLANK,
+      },
+    },
+    component: ServerError,
+  },
+  {
+    path: '*',
+    location: {
+      state: {
+        layout: layoutType.BLANK,
+      },
+    },
+    key: '/public/404',
+    component: Notfound,
   },
 ];
 

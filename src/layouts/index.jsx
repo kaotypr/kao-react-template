@@ -1,6 +1,6 @@
 import React from 'react';
 
-import * as Type from 'constants/layout';
+import * as Type from 'constant/layout';
 
 import AppLayout from './app';
 import PublicLayout from './public';

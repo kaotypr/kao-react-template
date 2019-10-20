@@ -1,16 +1,59 @@
 {
   "meta": {
     "title": "Kao Project",
-    "description": "Deskripsi aplikasi ini"
+    "description": "Deskripsi aplikasi ini",
+    "public": {
+      "page": {
+        "404": {
+          "title": "404",
+          "description": "Halaman yang anda cari tidak ditemukan"
+        },
+        "505": {
+          "title": "500",
+          "description": "Oops! sepertinya ada kesalahan pada server"
+        },
+        "home": {
+          "title": "Beranda",
+          "description": "Kamu di halaman beranda"
+        },
+        "signin": {
+          "title": "Masuk",
+          "description": "Kamu di halaman masuk"
+        },
+        "signup": {
+          "title": "Daftar",
+          "description": "Kamu di halaman daftar"
+        }
+      },
+      "component": {
+        "footer": {
+          "default": "Catatan Kaki"
+        }
+      }
+    },
+    "app": {
+      "page:": {
+        "dashboard": {
+          "title": "Dasbor",
+          "description": "Kamu di halaman dasbor"
+        },
+        "profile": {
+          "title": "Profil",
+          "description": "Kamu di halaman profil mu"
+        }
+      }
+    }
   },
   "navigation": {
     "public": {
-      "home": "Rumah",
+      "home": "Beranda",
       "signin": "Masuk",
-      "signup": "Daftar"
+      "signup": "Daftar",
+      "default": "Navigasi Halaman Publik"
     },
     "app": {
-      "dashboard": "Dasbor"
+      "dashboard": "Dasbor",
+      "default": "Navigasi Aplikasi"
     }
   },
   "common": {
@@ -30,7 +73,27 @@
       "previous": "Kembali",
       "confirm": "Konfirmasi",
       "sure": "Yakin",
-      "notsure": "Tidak Yakin"
+      "notsure": "Tidak Yakin",
+      "default": "Tombol"
+    },
+    "status": {
+      "loading": "Memuat",
+      "pending": "Menunggu",
+      "done": "Selesai",
+      "failed": "Gagal",
+      "canceled": "Dibatalkan",
+      "submitted": "Dikirimkan",
+      "updated": "Diperbarui",
+      "hidden": "Tersembunyi",
+      "showed": "Ditampilkan",
+      "confirmed": "Dikonfimasi",
+      "signedin": "Telah Masuk",
+      "registered": "Telah Terdaftar",
+      "logout": "Telah Keluar",
+      "authorize": "Melakukan Autorisasi",
+      "authorized": "Terautorisasi",
+      "unauthorized": "Tidak Terautorisasi",
+      "status": "Status"
     }
   }
 }
