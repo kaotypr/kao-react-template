@@ -11,7 +11,6 @@ const LayoutWrapper = styled.div`
   position: fixed;
   min-height: 100vh;
   min-width: 100vw;
-  background-color: yellow;
 `;
 
 export default AppLayout;

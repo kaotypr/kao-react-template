@@ -9,11 +9,11 @@ const PublicFooter = () => (
 );
 
 const FooterWrapper = styled.div`
-  position: absolute;
+  position: relative;
   width: 100vw;
   height: 7rem;
-  bottom: 0;
   background-color: #eee;
+  box-sizing: border-box;
 `;
 
 export default PublicFooter;

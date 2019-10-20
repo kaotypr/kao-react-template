@@ -15,14 +15,14 @@ const PublicLayout = ({ children }) => (
 );
 
 const ContentWrapper = styled.div`
-  position: relative;
-  top: 3rem;
+  padding: 3rem 1rem 2rem 1rem;
+  min-height: calc(100vh - 7rem);
+  max-width: 100vw;
+  box-sizing: border-box;
 `;
 
 const LayoutWrapper = styled.div`
-  position: fixed;
-  min-height: 100vh;
-  min-width: 100vw;
+  position: relative;
 `;
 
 export default memo(PublicLayout);

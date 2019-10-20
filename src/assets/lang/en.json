@@ -30,6 +30,18 @@
           "default": "Public Footer"
         }
       }
+    },
+    "app": {
+      "page:": {
+        "dashboard": {
+          "title": "Dasbor",
+          "description": "Kamu di halaman dasbor"
+        },
+        "profile": {
+          "title": "Profil",
+          "description": "Kamu di halaman profil mu"
+        }
+      }
     }
   },
   "navigation": {
