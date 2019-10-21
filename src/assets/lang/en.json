@@ -56,6 +56,11 @@
       "default": "App Navigation"
     }
   },
+  "invalid": {
+    "equal": "{{data}} is not equal with {{base}}",
+    "empty": "{{data}} cannot be empty",
+    "default": "invalid {{data}}"
+  },
   "common": {
     "button": {
       "submit": "Submit",

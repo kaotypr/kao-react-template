@@ -56,6 +56,11 @@
       "default": "Navigasi Aplikasi"
     }
   },
+  "invalid": {
+    "equal": "{{name}} is not equal with {{basename}}",
+    "empty": "{{name}} cannot be empty",
+    "default": "invalid {{name}}"
+  },
   "common": {
     "button": {
       "submit": "Kirim",
