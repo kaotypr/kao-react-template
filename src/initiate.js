@@ -4,13 +4,13 @@ import * as serviceWorker from './serviceWorker';
 
 const initiate = () => {
   if (process.env.NODE_ENV === 'production') serviceWorker.register();
-  const initiated = localStorage.getInitiated().isSet();
+  const initiated = localStorage.initiated.isSet();
 
   if (!initiated) {
     window.localStorage.clear();
-    localStorage.getInitiated().initItem();
+    localStorage.initiated.initItem();
   } else {
-    localStorage.getInitiated().updateItem('last_visit', new Date().getTime());
+    localStorage.initiated.setObjectProperty('last_visit', new Date().getTime());
   }
 };
 

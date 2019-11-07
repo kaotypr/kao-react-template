@@ -1,30 +1,37 @@
-import { isObject, isUndefinedNull } from 'helper/variable';
 import { cError } from 'helper/console';
 
+import * as vtype from 'constant/type';
+
 class LocalStorageEntry {
-  constructor(key, defaultValue) {
+  constructor({ key = 'dump', initvalue = null, type = 'object' }) {
     this.key = key;
-    this.defaultValue = defaultValue || null;
+    this.defaultValue = initvalue;
+    this.type = type;
+  }
+
+  isValidValue(value) {
+    const nvalue = value || this.defaultValue;
+    return ((typeof nvalue === this.type) && (nvalue !== null));
   }
 
   isSet() {
-    return window.localStorage.getItem(this.key);
+    return window.localStorage.getItem(this.key) !== vtype.UNDEFINED;
   }
 
   initItem(data) {
     try {
-      if (window.localStorage.getItem(this.key)) throw new Error(`localStorage.${this.key} already exist`);
-      if (!isUndefinedNull(data)) {
-        if (!isObject(data)) throw new Error('a localstorage item must be an object');
-        const timemarkData = { ...data, init_at: new Date().getTime() };
-        const dataStringify = JSON.stringify(timemarkData);
-        window.localStorage.setItem(this.key, dataStringify);
-      } else {
-        if (!isObject(this.defaultValue)) throw new Error('a localstorage item must be an object');
-        const timemarkData = { ...this.defaultValue, init_at: new Date().getTime() };
-        const dataStringify = JSON.stringify(timemarkData);
-        window.localStorage.setItem(this.key, dataStringify);
+      let ndata = data || this.defaultValue;
+      if (window.localStorage.getItem(this.key)) {
+        throw new Error(`localStorage.${this.key} already exist`);
       }
+      if (!this.isValidValue(ndata)) {
+        throw new Error(`localstorage.${this.key} type must be ${this.type}`);
+      }
+      if (this.type === vtype.OBJECT) {
+        const timemarkData = { ...ndata, init_at: new Date().getTime() };
+        ndata = JSON.stringify(timemarkData);
+      }
+      window.localStorage.setItem(this.key, ndata);
     } catch (error) {
       cError(error);
     }
@@ -32,20 +39,31 @@ class LocalStorageEntry {
 
   setItem(data) {
     try {
-      if (isUndefinedNull(this.isSet())) throw new Error(`localstorage.${this.key} is not initialized`);
-      if (!isObject(data)) throw new Error('a localstorage item must be an object');
-      const dataStringify = JSON.stringify(data);
-      window.localStorage.setItem(this.key, dataStringify);
+      let ndata = data;
+      if (!this.isSet()) {
+        throw new Error(`localstorage.${this.key} is not initialized`);
+      }
+      if (!this.isValidValue(ndata)) {
+        throw new Error(`localstorage.${this.key} type must be ${this.type}`);
+      }
+      if (this.type === vtype.OBJECT) {
+        ndata = JSON.stringify(data);
+      }
+      window.localStorage.setItem(this.key, ndata);
     } catch (error) {
       cError(error);
     }
   }
 
-  updateItem(key, value) {
+  setObjectProperty(key, value) {
     try {
-      const currentItem = JSON.parse(window.localStorage.getItem(this.key));
-      if (!currentItem) throw new Error(`Storage.${this.key} is not initialized`);
-      if (!currentItem[key]) throw new Error(`Storage.${this.key}[${key}] is not exist`);
+      if (this.type !== vtype.OBJECT) {
+        throw new Error(`Storage.${this.key} is not an object, you shouldn't use this method with this key`);
+      }
+      if (!this.isSet()) {
+        throw new Error(`localStorage.${this.key} is not initialized`);
+      }
+      const currentItem = JSON.parse(this.getItem());
       currentItem[key] = value;
       window.localStorage.setItem(this.key, JSON.stringify(currentItem));
     } catch (error) {
@@ -54,8 +72,7 @@ class LocalStorageEntry {
   }
 
   getItem() {
-    const data = window.localStorage.getItem(this.key);
-    return data ? JSON.parse(data) : this.defaultValue;
+    return window.localStorage.getItem(this.key);
   }
 
   removeItem() {
