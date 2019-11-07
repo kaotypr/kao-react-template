@@ -57,9 +57,9 @@
     }
   },
   "invalid": {
-    "equal": "{{name}} is not equal with {{basename}}",
-    "empty": "{{name}} cannot be empty",
-    "default": "invalid {{name}}"
+    "equal": "{{name}} tidak sesuai dengan {{basename}}",
+    "empty": "{{name}} tidak boleh kosong",
+    "default": "{{name}} tidak valid"
   },
   "common": {
     "button": {

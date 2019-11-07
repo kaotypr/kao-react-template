@@ -7,10 +7,3 @@ export const isNumber = variable => (!!variable) && (variable.constructor === Nu
 export const isString = variable => typeof variable === 'string' || variable instanceof String;
 
 export const isUndefinedNull = variable => variable === null || variable === undefined;
-
-export default {
-  isArray,
-  isObject,
-  isString,
-  isUndefinedNull,
-};

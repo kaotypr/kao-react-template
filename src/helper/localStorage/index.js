@@ -1,5 +1,7 @@
 import { DEFAULT_INITIATED } from 'constant/localstorage';
 
+import * as vtype from 'constant/type';
+
 import LocalStorageEntry from './entry';
 
 const STORAGE_KEYS = {
@@ -10,20 +12,49 @@ const STORAGE_KEYS = {
 };
 
 class LocalStorage {
-  constructor() {
-    this.initiated = new LocalStorageEntry(STORAGE_KEYS.initiated, DEFAULT_INITIATED);
-    this.user = new LocalStorageEntry(STORAGE_KEYS.user);
-    this.token = new LocalStorageEntry(STORAGE_KEYS.token);
-    this.notification = new LocalStorageEntry(STORAGE_KEYS.notification);
-  }
+    // INITIATED
+    initiatedStorage = new LocalStorageEntry({ key: STORAGE_KEYS.initiated, initvalue: DEFAULT_INITIATED });
 
-  getInitiated = () => this.initiated;
+    get initiated() {
+      return this.initiatedStorage;
+    }
 
-  getUser = () => this.user;
+    set initiated(val) {
+      this.initiatedStorage.setItem(val);
+    }
 
-  getToken = () => this.token;
+    // USER
+    userStorage = new LocalStorageEntry({ key: STORAGE_KEYS.user });
 
-  getNotification = () => this.notification;
+    get user() {
+      return this.userStorage;
+    }
+
+    set user(val) {
+      this.userStorage.setItem(val);
+    }
+
+    // TOKEN
+    tokenStorage = new LocalStorageEntry({ key: STORAGE_KEYS.token, type: vtype.STRING });
+
+    get token() {
+      return this.tokenStorage;
+    }
+
+    set token(val) {
+      this.tokenStorage.setItem(val);
+    }
+
+    // NOTIFICATION
+    notificationStorage = new LocalStorageEntry({ key: STORAGE_KEYS.notification });
+
+    get notification() {
+      return this.notificationStorage;
+    }
+
+    set notification(val) {
+      this.notification.setItem(val);
+    }
 }
 
 export default new LocalStorage();
