@@ -28,7 +28,7 @@ class LocalStorageEntry {
         throw new Error(`localstorage.${this.key} type must be ${this.type}`);
       }
       if (this.type === vtype.OBJECT) {
-        const timemarkData = { ...ndata, init_at: new Date().getTime() };
+        const timemarkData = { ...ndata, iat: new Date().getTime() };
         ndata = JSON.stringify(timemarkData);
       }
       window.localStorage.setItem(this.key, ndata);

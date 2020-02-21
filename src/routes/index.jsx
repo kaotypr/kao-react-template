@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import {
   Switch,
   useLocation,
   useHistory,
   matchPath,
 } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { get as _get } from 'lodash/object';
 
 import LayoutProvider from 'layouts';
@@ -28,12 +28,13 @@ export const getRouteObject = val => {
   return routeObj;
 };
 
-const Routes = ({
-  auth, dispatch,
-}) => {
-  const [layout, setLayout] = useState(LayoutType.DEFAULT);
+const Routes = () => {
+  const dispatch = useDispatch();
+  const auth = useSelector(state => state.auth);
   const location = useLocation();
   const history = useHistory();
+
+  const [layout, setLayout] = useState(LayoutType.DEFAULT);
 
   useEffect(() => {
     const applyAuthenticate = () => dispatch(authenticate());
@@ -76,6 +77,4 @@ const Routes = ({
   );
 };
 
-const connectedRoutes = connect(({ auth }) => ({ auth }))(Routes);
-
-export default connectedRoutes;
+export default memo(Routes);
